@@ -71,38 +71,43 @@ input[type="button"]
                 <input type="button" class="button" value="clear" id="clear" onclick="ClearDisplay()">
             </td>
             <tr>
-                <td><input type="button" value="1" onclick="DisplayNumber('1')"></td>
-                <td><input type="button" value="2" onclick="DisplayNumber('2')"></td>
-                <td><input type="button" value="3" onclick="DisplayNumber('3')"></td>
-                <td><input type="button" value="/"></td>
+                <td><input type="button" value="1" onclick="Display('1')"></td>
+                <td><input type="button" value="2" onclick="Display('2')"></td>
+                <td><input type="button" value="3" onclick="Display('3')"></td>
+                <td><input type="button" value="/" onclick="Display('/')"></td>
             </tr>
             <tr>
-                <td><input type="button" value="4" onclick="DisplayNumber('4')"></td>
-                <td><input type="button" value="5" onclick="DisplayNumber('5')"></td>
-                <td><input type="button" value="6" onclick="DisplayNumber('6')"></td>
-                <td><input type="button" value="*"></td>
+                <td><input type="button" value="4" onclick="Display('4')"></td>
+                <td><input type="button" value="5" onclick="Display('5')"></td>
+                <td><input type="button" value="6" onclick="Display('6')"></td>
+                <td><input type="button" value="*" onclick="Display('*')"></td>
             </tr>
             <tr>
-                <td><input type="button" value="7" onclick="DisplayNumber('7')"></td>
-                <td><input type="button" value="8" onclick="DisplayNumber('8')"></td>
-                <td><input type="button" value="9" onclick="DisplayNumber('9')"></td>
-                <td><input type="button" value="-"></td>
+                <td><input type="button" value="7" onclick="Display('7')"></td>
+                <td><input type="button" value="8" onclick="Display('8')"></td>
+                <td><input type="button" value="9" onclick="Display('9')"></td>
+                <td><input type="button" value="-" onclick="Display('-')"></td>
             </tr>
             <tr>
-                <td><input type="button" value="0" onclick="DisplayNumber('0')"></td>
-                <td><input type="button" value="."></td>
-                <td><input type="button" value="="></td>
-                <td><input type="button" value="+"></td>
+                <td><input type="button" value="0" onclick="Display('0')"></td>
+                <td><input type="button" value="." onclick="Display('.')"></td>
+                <td><input type="button" value="=" onclick="calculate()"></td>
+                <td><input type="button" value="+" onclick="Display('+')"></td>
             </tr>
         </tr>
     </table>
     <script>
-        function DisplayNumber(value)
+        function Display(value)
         {
             document.getElementById('answer').value += value;
         }
         function ClearDisplay(){
             document.getElementById('answer').value = '';
+        }
+        function calculate(){
+            let rel = document.getElementById('answer').value;
+            let result = eval(rel);
+            document.getElementById('answer').value = result;
         }
     </script>
 </body>
