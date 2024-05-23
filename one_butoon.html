@@ -7,8 +7,8 @@
 </head>
 <body>
     <label for="">Enter Your Password</label>
-    <input type="text" id="main"><br><br>
-    <button id="password" style="margin-left: 30px;">hide</button>
+    <input type="text" id="main">
+    <button id="password" style="">hide</button>
     <script>
         let text = document.getElementById('main');
         let button = document.getElementById('password');
@@ -16,12 +16,12 @@
         button.addEventListener('click',function(){
             if(text.type === 'password'){
                 text.type = 'text';
-                button.innerHTML = 'hide'
+                button.innerHTML = '<b>hide</b>'
             }
             else
             {
                 text.type = 'password'
-                button.innerHTML = 'show'
+                button.innerHTML = '<b>show</b>'
             }
         })
 </script>
