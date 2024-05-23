@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Enter Your Password</label>
+    <input type="text" id="main"><br><br>
+    <button id="password" style="margin-left: 30px;">hide</button>
+    <script>
+        let text = document.getElementById('main');
+        let button = document.getElementById('password');
+
+        button.addEventListener('click',function(){
+            if(text.type === 'password'){
+                text.type = 'text';
+                button.innerHTML = 'hide'
+            }
+            else
+            {
+                text.type = 'password'
+                button.innerHTML = 'show'
+            }
+        })
+</script>
+</body>
+</html>
