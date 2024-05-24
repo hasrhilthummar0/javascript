@@ -33,17 +33,31 @@
         // document.write("the maximum number in array is : ",max)
 
         // find minimum number array in js 
-        
-        let arr1 = [];
+
+        // let arr1 = [];
+        // for (let index = 0; index < 5; index++) {
+        //     arr1[index] = prompt('enter number in array');
+        // }
+        // for(let i=0; i<5; i++)
+        // {
+        //     document.write(arr1[i]+"<br>")
+        // }
+        // let min = Math.min(...arr1)
+        // document.write("the minimum number is : "+min)
+
+
+        // how can we arr in ascending format
+
+        let arr = [];
         for (let index = 0; index < 5; index++) {
-            arr1[index] = prompt('enter number in array');
+            arr[index] = prompt('Enter Array Value');
         }
-        for(let i=0; i<5; i++)
-        {
-            document.write(arr1[i]+"<br>")
+
+        for (let i = 0; i < 5; i++) {
+            document.write(arr[i] + "<br>")
         }
-        let min = Math.min(...arr1)
-        document.write("the minimum number is : "+min)
+        arr.sort((a, b) => a - b)
+        document.write('assending order is' + arr)
     </script>
 </body>
 
