@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Table</title>
+</head>
+
+<body>
+    <div id="first"></div>
+    <script>
+        let order = "<table>"
+        let arr = [['harshil', 'jay', 'nikunj'],
+        ['thummar', 'patel', 'jani']]
+        order += "<tr>"
+        for (let index = 0; index < arr.length; index++) {
+            
+            for (let i = 0; i < arr[index].length; i++) {
+                order += "<td>" + arr[index][i] + "</td>" 
+            }
+
+        }
+        order+="</tr></table>"
+        document.getElementById('first').innerHTML += order
+    </script>
+</body>
+
+</html>
