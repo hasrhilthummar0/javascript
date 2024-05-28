@@ -6,23 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array Table</title>
 </head>
+<style>
 
+</style>
 <body>
     <div id="first"></div>
     <script>
-        let order = "<table>"
-        let arr = [['harshil', 'jay', 'nikunj'],
-        ['thummar', 'patel', 'jani']]
-        order += "<tr>"
-        for (let index = 0; index < arr.length; index++) {
-            
-            for (let i = 0; i < arr[index].length; i++) {
-                order += "<td>" + arr[index][i] + "</td>" 
-            }
+        // let order = "<table border='1'>"
+        // let arr = [['harshil', 'jay', 'nikunj'],
+        // ['thummar', 'patel', 'jani']]
+        // order += "<tr>"
+        // for (let index = 0; index < arr.length; index++) {
 
+        //     for (let i = 0; i < arr[index].length; i++) {
+        //         order += "<td>" + arr[index][i] + "</td>"
+
+        //     }
+        //  "<br>"
+
+        // }
+        // order+="</tr>"
+        // order+="</table>"
+        // document.getElementById('first').innerHTML += order
+
+        let arr = [[1, 2, 3, 4, 5],
+        [6, 7, 8, 9, 10]]
+        document.write("<table border='1'>");
+        for (let i = 0; i < arr.length; i++) {
+            document.write("<tr>")
+            for (let j = 0; j < arr[i].length; j++) {
+                document.write("<td>" + arr[i][j] + "</td>");
+            }
+            document.write("</tr>")
         }
-        order+="</tr></table>"
-        document.getElementById('first').innerHTML += order
+
+        document.write("</table>");
     </script>
 </body>
 
