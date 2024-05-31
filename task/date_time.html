@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        
+        margin-left: 40%;
+    }
+</style>
+<body>  
+    <h1>Current Date And Time</h1>
+    <hr>
+    <h1 id="date"></h1><hr>
+    <h1 id="time"></h1>
+    <script>
+        function updatesecond() {
+            
+            let date = new Date();
+            document.getElementById('date').innerHTML = date.toDateString();
+            document.getElementById('time').innerHTML = date.toLocaleTimeString() ;
+        }
+        updatesecond();
+        setTimeout(updatesecond,1000);
+    </script>
+</body>
+</html>
