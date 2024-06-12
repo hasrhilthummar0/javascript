@@ -11,9 +11,10 @@
             margin-top: 10px;
             font-weight: lighter;
             background-repeat: no-repeat;
-           
         }
-       
+        form{
+            display: block;
+        }
     </style>
 </head>
 
@@ -21,6 +22,13 @@
 
     <h1>Restaurant Booking Form</h1>
     <div class="main">
+    <form action="">
+        <label for="">Choice of Booking</label>
+        <select id="booking-type" name="booking-type">
+            <option value="Half day booking">Half day booking</option>
+            <option value="Hourly booking">Hourly booking</option>
+            <option value="Full day booking">Full day booking</option>
+        </select><br><br>
         <label for="Name">UserName</label>
         <input type="text" class="input" id="Name" required><br><br>
         <label for="number">Mobile No</label>
@@ -31,10 +39,10 @@
         <input type="number" class="input" id="person" required><br><br>
         <label for="date">Date</label>
         <input type="date" class="input" id="date" required><br><br>
-        <label for="time">Time</label>
+        <label for="time" id="time-label">Time</label>
         <input type="time" class="input" id="time" required><br><br>
-        <label for="slot">Slot</label>
-        <select id="slot" required>
+        <label for="slot" id="slot-label">Slot</label>
+        <select id="slot" required >
             <option value="">Select a Slot</option>
             <option value="Breakfast">Breakfast</option>
             <option value="Lunch">Lunch</option>
@@ -42,12 +50,27 @@
         </select><br><br>
 
         <button id="submit">Submit</button>
+    </form>
     </div>
     <p id="ans">
     </p>
     <script>
-        let btn = document.querySelector("#submit");
+     document.getElementById('booking-type').addEventListener('change', function () {
+            const bookingType = this.value;
+            const slotLabel = document.getElementById('slot-label');
+            const slotInput = document.getElementById('slot');
+         
+            if (bookingType === 'Full day booking') {
+                slotLabel.style.display = 'none'
+                slotInput.style.display = 'none'
+               
+            } else {
+                slotLabel.style.display = 'flex'
+                slotInput.style.display = 'flex'
+            }
+        });
 
+        let btn = document.querySelector("#submit");
         btn.addEventListener('click', function () {
             let p = document.querySelector("#Name").value;
             let number = document.getElementById('number').value;
@@ -56,17 +79,19 @@
             let date = document.getElementById('date').value;
             let time = document.getElementById('time').value;
             let slot = document.getElementById('slot').value;
+            let booking = document.getElementById('booking-type').value;
             let result = document.getElementById('ans');
             let booking_Details = {
+                booking : booking,
                 username: p,
                 MobileNumber: number,
                 Email: email,
                 person: person,
                 Date: date,
                 Time: time,
-                slot: slot
+                slot: slot,
             }
-            result.textContent = `Username : ${booking_Details.username}, Mobile No : ${booking_Details.MobileNumber}, Email : ${booking_Details.Email},No of person : ${booking_Details.person},Date : ${booking_Details.Date},Slot : ${slot}`
+            result.textContent = `Booking : ${booking_Details.booking},Username : ${booking_Details.username}, Mobile No : ${booking_Details.MobileNumber}, Email : ${booking_Details.Email},No of person : ${booking_Details.person},Date : ${booking_Details.Date},Slot : ${slot}`
             console.log(booking_Details);
         })
     </script>
