@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sum and percentile</title>
 </head>
 <style>
     * {
@@ -59,7 +59,7 @@
             let pr = 0;
 
             for (const percentile of input) {
-                pr += Number(percentile.value) / sum;
+                pr += Number(percentile.value) / 8;
             }
             console.log("Percentage IS : " + pr);
             console.log("Sum Is : " + sum);

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Booking Form</title>
+    <style>
+        .main {
+            display: block;
+            margin-top: 10px;
+            font-weight: lighter;
+            background-repeat: no-repeat;
+           
+        }
+       
+    </style>
+</head>
+
+<body>
+
+    <h1>Restaurant Booking Form</h1>
+    <div class="main">
+        <label for="Name">UserName</label>
+        <input type="text" class="input" id="Name" required><br><br>
+        <label for="number">Mobile No</label>
+        <input type="text" class="input" id="number" required><br><br>
+        <label for="email">Email</label>
+        <input type="email" class="input" id="email" required><br><br>
+        <label for="person">No of Person</label>
+        <input type="number" class="input" id="person" required><br><br>
+        <label for="date">Date</label>
+        <input type="date" class="input" id="date" required><br><br>
+        <label for="time">Time</label>
+        <input type="time" class="input" id="time" required><br><br>
+        <label for="slot">Slot</label>
+        <select id="slot" required>
+            <option value="">Select a Slot</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+        </select><br><br>
+
+        <button id="submit">Submit</button>
+    </div>
+    <p id="ans">
+    </p>
+    <script>
+        let btn = document.querySelector("#submit");
+
+        btn.addEventListener('click', function () {
+            let p = document.querySelector("#Name").value;
+            let number = document.getElementById('number').value;
+            let email = document.getElementById('email').value;
+            let person = document.getElementById('person').value;
+            let date = document.getElementById('date').value;
+            let time = document.getElementById('time').value;
+            let slot = document.getElementById('slot').value;
+            let result = document.getElementById('ans');
+            let booking_Details = {
+                username: p,
+                MobileNumber: number,
+                Email: email,
+                person: person,
+                Date: date,
+                Time: time,
+                slot: slot
+            }
+            result.textContent = `Username : ${booking_Details.username}, Mobile No : ${booking_Details.MobileNumber}, Email : ${booking_Details.Email},No of person : ${booking_Details.person},Date : ${booking_Details.Date},Slot : ${slot}`
+            console.log(booking_Details);
+        })
+    </script>
+</body>
+
+</html>
