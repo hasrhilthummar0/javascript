@@ -54,6 +54,11 @@
         margin-top: -10%;
         margin-left: 35%;
     }
+    .cap{
+        height: 100px;
+        border: 1px solid black;
+        width: 100px;
+    }
 </style>
 
 <body>
@@ -69,15 +74,22 @@
             <input type="text" id="user"><br><br>
             <label for="">Password</label>
             <input type="password" id="pass"><br><br>
+            <label for=""> number</label>
+            <input type="text"><br><br>
         </div>
         <div class="btn">
             <button id="login">Login</button>
             <button id="reset">Reset</button>
+            <button id="gen">generate</button>
+        </div>
+        <div class="cap">
+
         </div>
     </div>
-    <p id="ans"></p>
 </body>
 <script>
+
+
     let submitButton = document.getElementById('login');
     submitButton.addEventListener('click', function () {
         let UserName = 'harshil_thummar';
@@ -97,7 +109,7 @@
             answer.innerHTML = '<b>Incorrect Username / Password</b>';
             console.log('Incorrect Username / Password');
         }
-    })
+    });
 </script>
 
 </html>
