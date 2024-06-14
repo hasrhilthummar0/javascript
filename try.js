@@ -3,5 +3,5 @@ let try1 =  {
     email : 'abv@gmail.com',    
     
 };
-try1.email = 'hhb@gmail.com';
-console.log(try1);
+console.log(try1.email = 'hhb@gmail.com');
+// console.log(try1);
