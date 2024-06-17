@@ -22,19 +22,18 @@
         let uppercase = 'ABCDEFGHIJKLMNOPQRTSUVWXYZ';
         let lowercase = 'abcdefghijklmnopqrstuvwxyz'
         let number = '1234567890';
-        let symaball = '!@#$%^&*()_~'
+        let symaball = '!@#$%^&*()_~';
         let passlength = 10;
         let all = uppercase + lowercase + number + symaball;
         function GeneratePassword() {
             let password = '';
-            password += uppercase[Math.floor(Math.random()*uppercase.length)]
-            password += lowercase[Math.floor(Math.random()*lowercase.length)]
-            password += symaball[Math.floor(Math.random()*symaball.length)]
-            password += number[Math.floor(Math.random()*number.length)]
+            password = password + uppercase[Math.floor(Math.random() * uppercase.length)]
+            password = password + lowercase[Math.floor(Math.random() * lowercase.length)]
+            password = password + symaball[Math.floor(Math.random() * symaball.length)]
+            password = password + number[Math.floor(Math.random() * number.length)]
 
-            while(passlength > password.length)
-            {
-                password += all[Math.floor(Math.random()*all.length)]
+            while (passlength > password.length) {
+                password += all[Math.floor(Math.random() * all.length)]
 
             }
             passbox.value = password;
