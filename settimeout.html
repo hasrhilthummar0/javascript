@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="id">
+        <button onclick="startnumber()">start</button>
+        <button onclick="stopnumber()">stop</button>
+    </div>
+    <div id="res" style="margin-top: 30px;">
+
+    </div>
+    <script>
+        let run;
+        let count = 1;
+        function startnumber() {
+
+            run = setInterval(function change() {
+                document.getElementById('res').innerText += count + " ";
+                count++;
+            }, 1000)
+        }
+        function stopnumber() {
+            // clearInterval(run);
+        }
+
+        // let run;
+        // function startnumber() {
+        //     run = setTimeout(function set() {
+        //         document.getElementById('res').innerHTML += 1;
+        //     }, 1000)
+        // }
+        // function stopnumber() {
+        //     clearTimeout(run)
+        //     document.getElementById('res').innerHTML = 'end setimeout';
+        // }
+    </script>
+</body>
+
+</html>

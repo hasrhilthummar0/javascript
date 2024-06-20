@@ -1,0 +1,6 @@
+
+node_modules/object-inspect/test/inspect.js
+*.js
+*.md
+/node_modules/utils-merge
+/node_modules
