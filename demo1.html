@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #main {
+        height: 300px;
+        width: 300px;
+        border: 2px solid black;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        margin: auto;
+    }
+</style>
+
+<body>
+    <div id="main"></div>
+    <button onclick="startNumber()">Start</button>
+    <button onclick="stopNumber()">stop</button>
+    <script>
+        let NumberInterval;
+        let count = 0;
+        let color = ['red', 'green', 'blue', 'pink', 'orange']
+        let a = document.getElementById('main')
+        function startNumber() {
+            NumberInterval = setInterval(function change() {
+                a.innerHTML = count;
+                a.style.backgroundColor =color[count];
+                count = (count + 1)%color.length;
+            },1000)
+        }
+        function stopNumber() {
+            clearInterval(NumberInterval)
+        }
+    </script>
+</body>
+
+</html>
