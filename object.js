@@ -11,7 +11,7 @@ for (let index = 0; index < detaisl.length; index++) {
 
 // for in
 
-// for(let infor in detaisl)
+// for(let infor w detaisl)
 //     {
 //         console.log("your age is " , detaisl[infor].age);
 //     }
